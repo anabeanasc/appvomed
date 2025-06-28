@@ -1,0 +1,370 @@
+:root {
+  --roxo: #6c3cc6;
+  --azul-claro: #61dafb;
+  --preto: #191919;
+  --branco: #fff;
+  --fonte-principal: 'Segoe UI', Arial, Helvetica, sans-serif;
+  --raio: 1.5rem;
+  --sombra: 0 2px 12px 0 rgba(52,23,99,0.08);
+  --transicao: 0.2s;
+  --tamanho-fonte: 1.1rem;
+  --tamanho-fonte-grande: 1.4rem;
+  --tamanho-fonte-titulo: 2.2rem;
+  --tamanho-icone: 2.2rem;
+}
+
+[data-theme="dark"] {
+  --branco: #191919;
+  --preto: #fff;
+  --azul-claro: #4ed0fc;
+  --roxo: #8a59ec;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--azul-claro);
+  color: var(--preto);
+  font-family: var(--fonte-principal);
+  font-size: var(--tamanho-fonte);
+  min-height: 100vh;
+  transition: background 0.4s, color 0.4s;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tela {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  background: var(--branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 2.5rem 1.6rem 2rem 1.6rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.45s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.titulo {
+  font-size: var(--tamanho-fonte-titulo);
+  color: var(--roxo);
+  font-weight: 700;
+  margin-bottom: 0.6em;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.slogan {
+  font-size: 1.1rem;
+  color: var(--azul-claro);
+  margin-bottom: 2.5em;
+  text-align: center;
+}
+
+input, select {
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.9em;
+  border: 1.5px solid #dadada;
+  margin-bottom: 1.2em;
+  font-size: 1.2rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: var(--roxo);
+}
+
+.botao {
+  width: 100%;
+  padding: 1.1em 0;
+  background: var(--roxo);
+  color: var(--branco);
+  border: none;
+  border-radius: 0.9em;
+  font-size: var(--tamanho-fonte-grande);
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  transition: background 0.2s;
+}
+
+.botao:active, .botao:focus {
+  background: #4e2286;
+}
+
+.botao.secundario {
+  background: var(--azul-claro);
+  color: var(--roxo);
+  border: 2px solid var(--roxo);
+}
+
+.botao.mini {
+  font-size: 1rem;
+  padding: 0.6em 1.3em;
+  width: auto;
+}
+
+.icone {
+  font-size: var(--tamanho-icone);
+  vertical-align: middle;
+}
+
+.cabecalho {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.saudar {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--roxo);
+}
+
+.resumo-medicamentos {
+  width: 100%;
+  background: #f7f3fd;
+  border-radius: 1em;
+  padding: 1.1em 1em 0.6em 1em;
+  margin-bottom: 1.6em;
+  box-shadow: 0 2px 10px #e7e0f5;
+}
+
+.resumo-medicamentos h3 {
+  color: var(--roxo);
+  font-size: 1.1rem;
+  margin-bottom: 0.7em;
+}
+
+.resumo-medicamentos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resumo-medicamentos li {
+  margin-bottom: 0.5em;
+  font-size: 1.06rem;
+  color: #6c3cc6;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.botoes-linha {
+  display: flex;
+  gap: 1.2em;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1.5em;
+}
+
+.botao-icone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--roxo);
+  font-size: 1.1rem;
+  cursor: pointer;
+  gap: 0.3em;
+}
+
+.botao-icone .icone {
+  font-size: 2.2rem;
+  margin-bottom: 0.2em;
+}
+
+.card-medicamento {
+  width: 100%;
+  background: #ede5fa;
+  border-radius: 1em;
+  padding: 1.2em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  box-shadow: 0 2px 10px #e7e0f5;
+}
+
+.card-medicamento .nome {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--roxo);
+}
+
+.card-medicamento .dose,
+.card-medicamento .frequencia {
+  color: #49317f;
+  font-size: 1.06rem;
+}
+
+.card-medicamento .horario {
+  color: var(--azul-claro);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#historico-calendario {
+  width: 100%;
+  margin: 1.2em 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.3em;
+}
+
+.dia-calendario {
+  background: #f6f6fa;
+  border-radius: 0.7em;
+  padding: 0.7em 0.2em;
+  text-align: center;
+  font-size: 1.08rem;
+  color: var(--roxo);
+  border: 1.5px solid #e4d7fa;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dia-calendario.completo { background: #b3e5c7; color: #22893a; border: 2px solid #22893a;}
+.dia-calendario.incompleto { background: #fde6e6; color: #be4a4a; border: 2px solid #be4a4a;}
+
+#adesao-porcentagem {
+  font-size: 1.18rem;
+  font-weight: 500;
+  margin-bottom: 1.6em;
+  color: var(--roxo);
+}
+
+.config-opcoes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin-bottom: 1.3em;
+}
+
+.config-opcao {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.1rem;
+  justify-content: space-between;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+}
+.switch input { opacity: 0; width: 0; height: 0;}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #d1b0f9;
+  border-radius: 24px;
+  transition: .2s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px; width: 19px;
+  left: 2.5px; bottom: 2.5px;
+  background-color: var(--branco);
+  border-radius: 50%;
+  transition: .2s;
+}
+input:checked + .slider {background-color: var(--roxo);}
+input:checked + .slider:before {transform: translateX(21px);}
+
+.faq {
+  width: 100%;
+  margin-top: 1.2em;
+}
+.faq-pergunta {
+  margin-bottom: 1.1em;
+}
+.faq-pergunta summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--roxo);
+  cursor: pointer;
+  margin-bottom: 0.2em;
+}
+.faq-pergunta p {padding-left: 1.2em; color: #333;}
+
+#popup-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.popup {
+  background: var(--branco);
+  border-radius: 1em;
+  box-shadow: 0 6px 24px #0003;
+  padding: 2.2em 1.7em 1.5em 1.7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 270px;
+  max-width: 95vw;
+  pointer-events: all;
+  animation: fadeIn 0.3s;
+}
+.popup .titulo {font-size: 1.4rem;}
+.popup-botoes {
+  display: flex;
+  gap: 1.6em;
+  margin-top: 1.3em;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .tela {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1.3rem 0.5rem 1.5rem 0.5rem;
+    border-radius: 0;
+    min-height: 100vh;
+    max-width: 100vw;
+    box-shadow: none;
+  }
+  body { font-size: 1rem;}
+}
+
+::-webkit-scrollbar {width: 10px;}
+::-webkit-scrollbar-thumb {background: #dad6fa; border-radius: 5px;}
+::-webkit-scrollbar-track {background: #f6f6fa;}
